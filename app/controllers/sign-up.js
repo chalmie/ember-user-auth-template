@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
           console.log(error);
         } else {
           var params = {
-            email: this.get('email')
+            email: this.get('email'),
           };
           var newUser = this.store.createRecord('user', params);
           console.log(newUser);
