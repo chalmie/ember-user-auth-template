@@ -12,6 +12,12 @@ export default Ember.Controller.extend({
         if (error) {
           console.log(error);
         } else {
+          var params = {
+            email: this.get('email')
+          };
+          var newUser = this.store.createRecord('user', params);
+          console.log(newUser);
+          newUser.save();
           controller.set('email', null);
           controller.set('password', null);
           controller.transitionToRoute('sign-in');
